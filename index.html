@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang = "en-US">
+<head>
+    <meta charset = "UTF-8">
+    <title>Maze Game</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body onload = "initialize()">
+    <div class="blue">
+        <h1>Maze Game</h1>
+
+        <div class="flex-container mr-8">
+            <div>
+                <div id="highScore">
+                    <b>High Score: </b>
+                </div>
+
+                <div id="currentScore">
+                    <b>Current Score: </b>
+                </div>
+
+                <div id="elapsedTime">
+                    <b>Time:</b>
+                </div>
+
+                <label for="size"><b>Game Size:</b></label>
+                <select id="size" name="size">
+                    <option value="5">5 X 5</option>
+                    <option value="10">10 X 10</option>
+                    <option value="15">15 X 15</option>
+                    <option value="20">20 X 20</option>
+                </select>
+                <br/>
+
+                <label class="switch">
+                    <input type="checkbox" id="breadcrumbs">
+                    <span class="slider round"></span>
+                </label>
+                Breadcrumbs
+                <br/>
+
+                <label class="switch">
+                    <input type="checkbox" id="path">
+                    <span class="slider round"></span>
+                </label>
+                Show Path
+                <br/>
+
+                <label class="switch">
+                    <input type="checkbox" id="hint">
+                    <span class="slider round"></span>
+                </label>
+                Hint
+                <br/>
+            </div>
+            <canvas id = "canvas-main" width = "1000" height = "1000" class="canvas-style"
+                style="width: 45%; height: 45%">
+            </canvas>
+        </div>            
+        <div>
+            <p> Created for CS 5410 </p>
+            <h6> By Allie Oborn </h6>
+            <h6> 2022 </h6>
+        </div>
+    </div>
+    <div id="gameOver" class="modal">
+        <div class="modal-content">
+            <!-- <span class="close">&times;</span> -->
+            <h2>You finished the maze!</h2>
+            <div id="gameScore"></div>
+            <br/>
+            <button class="button" onclick="newGame()">
+                Start New Game
+            </button>
+        </div>
+    </div>
+    <script src = "scripts/mazeGenerator.js"></script>
+    <script src = "scripts/shortestPath.js"></script>
+    <script src = "scripts/keyboardInput.js"></script>
+    <script src = "scripts/rendering.js"></script>
+    <script src = "scripts/main.js"></script>
+</body>
+</html>
